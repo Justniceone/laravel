@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::match(['get', 'post'], '/test', function () {
+    return 'matched';
+});
+
+Route::any('foo', function () {
+    return 'any';
+});
+
+Route::get('/user','UserController@index');
+
+Route::get('/route', function (){
+    return view('user.user');
+});
+
+Route::get('/login', 'UserController@login');
